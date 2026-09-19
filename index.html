@@ -869,6 +869,80 @@
         }
       }
 
+      /* ===== RESPONSIVE FIXES (semua ukuran layar) ===== */
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      body {
+        overflow-wrap: anywhere;
+      }
+      .container {
+        width: 100%;
+      }
+      @media (max-width: 600px) {
+        .container {
+          padding: 0 18px;
+        }
+        section.block {
+          padding: 52px 0;
+        }
+        section.block.tight {
+          padding: 40px 0;
+        }
+        .contact-cta {
+          padding: 28px 22px;
+        }
+        .calc-card {
+          padding: 20px;
+        }
+      }
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+        .nav-row {
+          gap: 10px;
+        }
+        .brand {
+          flex-shrink: 1;
+          min-width: 0;
+        }
+        .brand span {
+          min-width: 0;
+          overflow: hidden;
+        }
+        .brand-name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .brand-tag {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        a.btn.btn-outline-light.btn-sm {
+          padding: 7px 12px;
+          font-size: 0.76rem;
+          flex-shrink: 0;
+        }
+        .hero-copy h1 {
+          line-height: 1.2;
+        }
+        .stat-cell {
+          padding: 22px 14px;
+        }
+      }
+      @media (max-width: 360px) {
+        .container {
+          padding: 0 12px;
+        }
+        .brand-tag {
+          display: none;
+        }
+      }
+
       .reveal {
         transition:
           opacity 0.6s ease,

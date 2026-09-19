@@ -120,7 +120,8 @@
   .search-box input{ width:100%; padding:10px 12px 10px 36px; border:1px solid var(--line); border-radius:10px; font-size:0.87rem; background:var(--bg); }
   select.filter-select{ padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-size:0.85rem; background:var(--bg); color:var(--ink-700); }
 
-  table{ width:100%; border-collapse:collapse; }
+  .table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table{ width:100%; border-collapse:collapse; min-width:560px; }
   thead th{ text-align:left; font-size:0.74rem; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-400); padding:10px 12px; border-bottom:1px solid var(--line); }
   tbody td{ padding:12px; border-bottom:1px solid var(--line); font-size:0.87rem; vertical-align:middle; }
   tbody tr:last-child td{ border-bottom:none; }
@@ -203,8 +204,8 @@
   /* ===== SETTINGS ===== */
   .settings-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
   @media (max-width:900px){ .settings-grid{ grid-template-columns:1fr; } }
-  .contact-row{ display:flex; gap:10px; align-items:flex-end; margin-bottom:12px; }
-  .contact-row .field{ flex:1; margin-bottom:0; }
+  .contact-row{ display:flex; gap:10px; align-items:flex-end; margin-bottom:12px; flex-wrap:wrap; }
+  .contact-row .field{ flex:1; margin-bottom:0; min-width:140px; }
   .gold-price-box{ background:var(--amber-50); border:1px solid #F0DDB2; border-radius:var(--radius-md); padding:16px; }
   .gold-price-box .big{ font-size:1.5rem; font-weight:800; color:var(--amber-600); }
   .cat-tag{ display:inline-flex; align-items:center; gap:8px; background:var(--green-100); color:var(--green-700); padding:6px 12px; border-radius:999px; font-size:0.82rem; font-weight:600; margin:0 8px 8px 0; }
@@ -227,6 +228,21 @@
     .content{ padding:20px 16px 40px; }
     .stat-grid{ grid-template-columns:1fr 1fr; gap:12px; }
     .field-row{ grid-template-columns:1fr; }
+  }
+
+  /* ===== RESPONSIVE FIXES tambahan (layar sangat kecil) ===== */
+  html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body{ overflow-wrap:anywhere; }
+  @media (max-width:480px){
+    .content{ padding:16px 12px 32px; }
+    .stat-grid{ grid-template-columns:1fr; }
+    .topbar{ padding:14px 16px; }
+    .panel-body{ padding:16px; }
+    .panel-head{ padding:16px; }
+    .slide-item{ flex-wrap:wrap; }
+    .slide-item .si-body{ flex:1 1 100%; min-width:0; }
+    .pcm-item{ flex-wrap:wrap; }
+    .pcm-body{ flex:1 1 100%; min-width:0; }
   }
 </style>
 </head>
